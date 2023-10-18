@@ -3,7 +3,10 @@
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@/components/ui/button";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { supabase } from "@/utils/supabase";
+import { ToastAction } from "@radix-ui/react-toast";
+
 import {
   Form,
   FormControl,
@@ -12,17 +15,16 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { supabase } from "@/utils/supabase";
 import { useToast } from "../../components/ui/use-toast";
-import { ToastAction } from "@radix-ui/react-toast";
 import { queryClient } from "../../components/Providers";
 import { Player } from "./columnsWonderkids";
 
 const FormSchema = z.object({
-  name: z.string().min(1, { message: "Name be 1 or more characters long" }),
+  name: z
+    .string()
+    .min(1, { message: "Name must be 1 or more characters long" }),
   age: z.number({
     required_error: "Age is required",
     invalid_type_error: "Age must be a number",
@@ -157,7 +159,7 @@ export default function AddPlayer({ queryKey }: any) {
               <FormItem>
                 <FormLabel>CLUB</FormLabel>
                 <FormControl>
-                  <Input placeholder="Barcelona" {...field} />
+                  <Input placeholder="FC Barcelona" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -171,7 +173,7 @@ export default function AddPlayer({ queryKey }: any) {
               <FormItem>
                 <FormLabel>NAT</FormLabel>
                 <FormControl>
-                  <Input placeholder="Brazil" {...field} />
+                  <Input placeholder="BRA" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

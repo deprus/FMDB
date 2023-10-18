@@ -160,7 +160,7 @@ export default function UpdatePlayer({ data: playersData, queryKey }: any) {
               <FormItem>
                 <FormLabel>CLUB</FormLabel>
                 <FormControl>
-                  <Input placeholder="Barcelona" {...field} />
+                  <Input placeholder="FC Barcelona" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -174,7 +174,7 @@ export default function UpdatePlayer({ data: playersData, queryKey }: any) {
               <FormItem>
                 <FormLabel>NAT</FormLabel>
                 <FormControl>
-                  <Input placeholder="Brazil" {...field} />
+                  <Input placeholder="BRA" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
