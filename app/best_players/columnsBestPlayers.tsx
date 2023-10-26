@@ -31,7 +31,7 @@ export type Player = {
   val: number;
 };
 
-export const columnsWonderkids: ColumnDef<Player>[] = [
+export const columnsBestPlayers: ColumnDef<Player>[] = [
   {
     accessorKey: "name",
     header: ({ column }) => {
@@ -163,19 +163,19 @@ export const columnsWonderkids: ColumnDef<Player>[] = [
     enableHiding: false,
     cell: ({ row }) => {
       // eslint-disable-next-line react-hooks/rules-of-hooks
-      const deleteWonderkid = useMutation({
-        mutationFn: async (wonderkid: Player): Promise<any> => {
+      const deleteBestPlayer = useMutation({
+        mutationFn: async (bestPlayer: Player): Promise<any> => {
           const { error } = await supabase
-            .from("wonderkid")
+            .from("bestPlayer")
             .delete()
-            .eq("id", wonderkid.id);
+            .eq("id", bestPlayer.id);
         },
         onSuccess: () => {
           toast({
-            title: `Player ${wonderkid.name} deleted`,
+            title: `Player ${bestPlayer.name} deleted`,
             description: `${new Date().toLocaleString()}`,
           });
-          queryClient.invalidateQueries({ queryKey: ["wonderkid"] });
+          queryClient.invalidateQueries({ queryKey: ["bestPlayer"] });
         },
         onError: () => {
           toast({
@@ -185,12 +185,12 @@ export const columnsWonderkids: ColumnDef<Player>[] = [
           });
         },
       });
-      const wonderkid = row.original;
+      const bestPlayer = row.original;
 
       return (
         <Dialog>
           <DialogContent>
-            <UpdatePlayer data={wonderkid} queryKey="wonderkid" />
+            <UpdatePlayer data={bestPlayer} queryKey="bestPlayer" />
           </DialogContent>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -201,7 +201,7 @@ export const columnsWonderkids: ColumnDef<Player>[] = [
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuItem
-                onClick={() => deleteWonderkid.mutate(wonderkid)}
+                onClick={() => deleteBestPlayer.mutate(bestPlayer)}
               >
                 Delete
               </DropdownMenuItem>

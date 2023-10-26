@@ -15,63 +15,55 @@ export default function Home() {
             <div className="w-full max-w-full space-y-4 mx-auto">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 <div className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg">
+                  <div className="p-2 bg-black  rounded-full"></div>
+                  <h2 className="text-xl font-bold text-black">Best players</h2>
+                  <p className="text-blue-950 dark:text-zinc-100">
+                    Explore elite talents that can elevate your team&apos;s
+                    performance.
+                  </p>
+                </div>
+                <div className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg">
                   <div className="p-2 bg-black rounded-full"></div>
-                  <h2 className="text-xl font-bold text-black">
-                    Lorem, ipsum.
-                  </h2>
+                  <h2 className="text-xl font-bold text-black">Wonderkids</h2>
                   <p className="text-blue-950 dark:text-zinc-100">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Atque, vitae.
+                    Unearth football&apos;s rising stars, the young talents with
+                    exceptional potential.
                   </p>
                 </div>
                 <div className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg">
                   <div className="p-2 bg-black  rounded-full"></div>
                   <h2 className="text-xl font-bold text-black">
-                    Lorem, ipsum.
+                    Coaching staff
                   </h2>
                   <p className="text-blue-950 dark:text-zinc-100">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Saepe, consequuntur.
+                    Discover the tactical minds and mentors behind successful
+                    teams.
+                  </p>
+                </div>
+                <div className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg">
+                  <div className="p-2 bg-black  rounded-full"></div>
+                  <h2 className="text-xl font-bold text-black">Free agents</h2>
+                  <p className="text-blue-950 dark:text-zinc-100">
+                    Sign unattached talents and strengthen your squad with
+                    players out of contract.
+                  </p>
+                </div>
+                <div className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg">
+                  <div className="p-2 bg-black  rounded-full"></div>
+                  <h2 className="text-xl font-bold text-black">Bargains</h2>
+                  <p className="text-blue-950 dark:text-zinc-100">
+                    Find hidden gems in the transfer market, offering
+                    exceptional value.
                   </p>
                 </div>
                 <div className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg">
                   <div className="p-2 bg-black  rounded-full"></div>
                   <h2 className="text-xl font-bold text-black">
-                    Lorem, ipsum.
+                    Best youth facilities
                   </h2>
                   <p className="text-blue-950 dark:text-zinc-100">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Saepe, consequuntur.
-                  </p>
-                </div>
-                <div className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg">
-                  <div className="p-2 bg-black  rounded-full"></div>
-                  <h2 className="text-xl font-bold text-black">
-                    Lorem, ipsum.
-                  </h2>
-                  <p className="text-blue-950 dark:text-zinc-100">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Saepe, consequuntur.
-                  </p>
-                </div>
-                <div className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg">
-                  <div className="p-2 bg-black  rounded-full"></div>
-                  <h2 className="text-xl font-bold text-black">
-                    Lorem, ipsum.
-                  </h2>
-                  <p className="text-blue-950 dark:text-zinc-100">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Saepe, consequuntur.
-                  </p>
-                </div>
-                <div className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg">
-                  <div className="p-2 bg-black  rounded-full"></div>
-                  <h2 className="text-xl font-bold text-black">
-                    Lorem, ipsum.
-                  </h2>
-                  <p className="text-blue-950 dark:text-zinc-100">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Saepe, consequuntur.
+                    Discover clubs with premier youth facilities, cultivating
+                    the future football superstars.
                   </p>
                 </div>
               </div>

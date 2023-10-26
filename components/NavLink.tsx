@@ -20,7 +20,7 @@ export default function NavLink({
   const isActive = pathname === href;
   return (
     <li
-      className={` hover:bg-blue-600 lg:hover:bg-transparent rounded-sm ${
+      className={` hover:bg-blue-600 px-2 lg:px-0 lg:hover:bg-transparent rounded-sm ${
         isActive && "bg-blue-600 lg:bg-transparent"
       }`}
     >
@@ -31,7 +31,7 @@ export default function NavLink({
       >
         <Button
           variant="link"
-          className={`text-white lg:hover:underline block text-md ${
+          className={`text-white px-0 lg:hover:underline block text-md ${
             isActive && "lg:underline"
           }`}
         >

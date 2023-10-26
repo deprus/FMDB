@@ -3,10 +3,7 @@
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { supabase } from "@/utils/supabase";
-import { ToastAction } from "@radix-ui/react-toast";
-
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -15,16 +12,18 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Button } from "@/components/ui/button";
+
 import { Input } from "@/components/ui/input";
-import { useToast } from "../../components/ui/use-toast";
-import { queryClient } from "../../components/Providers";
-import { Player } from "./columnsWonderkids";
+import { useMutation } from "@tanstack/react-query";
+import { supabase } from "@/utils/supabase";
+import { useToast } from "./ui/use-toast";
+import { ToastAction } from "@radix-ui/react-toast";
+import { queryClient } from "./Providers";
+
+import { Player } from "../app/wonderkids/columnsWonderkids";
 
 const FormSchema = z.object({
-  name: z
-    .string()
-    .min(1, { message: "Name must be 1 or more characters long" }),
+  name: z.string().min(1, { message: "Name be 1 or more characters long" }),
   age: z.number({
     required_error: "Age is required",
     invalid_type_error: "Age must be a number",
@@ -55,12 +54,13 @@ const FormSchema = z.object({
   }),
 });
 
-export default function AddPlayer({ queryKey }: any) {
+export default function UpdatePlayer({ data: playersData, queryKey }: any) {
   const { toast } = useToast();
   const mutation = useMutation({
     mutationFn: (values: Player): any => {
-      const data = supabase.from(queryKey).insert([
-        {
+      const data = supabase
+        .from(queryKey)
+        .update({
           name: values.name,
           age: values.age,
           club: values.club,
@@ -70,13 +70,14 @@ export default function AddPlayer({ queryKey }: any) {
           val: values.val,
           cur: values.cur,
           pot: values.pot,
-        },
-      ]);
+        })
+        .eq("id", playersData.id)
+        .select();
       return data;
     },
     onSuccess: () => {
       toast({
-        title: "Player added",
+        title: "Player updated",
         description: `${new Date().toLocaleString()}`,
       });
       queryClient.invalidateQueries({ queryKey: [queryKey] });
@@ -84,7 +85,7 @@ export default function AddPlayer({ queryKey }: any) {
     onError: () => {
       toast({
         variant: "destructive",
-        title: "Could not add the player.",
+        title: "Could not update the player.",
         action: <ToastAction altText="Try again">Try again</ToastAction>,
       });
     },
@@ -93,15 +94,15 @@ export default function AddPlayer({ queryKey }: any) {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      name: "",
-      age: 0,
-      club: "",
-      nat: "",
-      pos: "",
-      wage: 0,
-      val: 0,
-      cur: 0,
-      pot: "",
+      name: playersData.name,
+      age: playersData.age,
+      club: playersData.club,
+      nat: playersData.nat,
+      pos: playersData.pos,
+      wage: playersData.wage,
+      val: playersData.val,
+      cur: playersData.cur,
+      pot: playersData.pot,
     },
   });
 

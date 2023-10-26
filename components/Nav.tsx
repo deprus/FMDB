@@ -17,7 +17,7 @@ export default function Nav({
       }`}
       id="navbar-sticky"
     >
-      <ul className="flex flex-col p-4 lg:p-0 mt-4 font-medium border rounded-lg lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0  bg-gray-800 lg:bg-gray-900 border-gray-700">
+      <ul className="flex flex-col p-4 lg:p-0 mt-4 font-medium border rounded-lg lg:flex-row lg:space-x-6 lg:mt-0 lg:border-0  bg-gray-800 lg:bg-gray-900 border-gray-700">
         <NavLink
           setIsHamburgerClosed={setIsHamburgerClosed}
           href="/"
@@ -25,8 +25,33 @@ export default function Nav({
         />
         <NavLink
           setIsHamburgerClosed={setIsHamburgerClosed}
+          href="/best_players"
+          title="Best players"
+        />
+        <NavLink
+          setIsHamburgerClosed={setIsHamburgerClosed}
           href="/wonderkids"
           title="Wonderkids"
+        />
+        <NavLink
+          setIsHamburgerClosed={setIsHamburgerClosed}
+          href="/coaches"
+          title="Coaches"
+        />
+        <NavLink
+          setIsHamburgerClosed={setIsHamburgerClosed}
+          href="/free_agents"
+          title="Free agents"
+        />
+        <NavLink
+          setIsHamburgerClosed={setIsHamburgerClosed}
+          href="/bargains"
+          title="Bargains"
+        />
+        <NavLink
+          setIsHamburgerClosed={setIsHamburgerClosed}
+          href="/youth_facilities"
+          title="Youth facilities"
         />
       </ul>
     </div>
