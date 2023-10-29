@@ -5,17 +5,17 @@ import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/utils/supabase";
 import { Skeleton } from "@/components/ui/skeleton";
 import AddPlayerSection from "../../components/AddPlayerSection";
-import { columnsBestPlayers } from "./columnsBestPlayers";
+import { columnsYouthFacilities } from "./columnsYouthFacilities";
 
 export default function Page() {
   const { data, isLoading: isGetting } = useQuery({
-    queryKey: ["bestPlayer"],
+    queryKey: ["youthFacility"],
     queryFn: async () => {
-      const { data, error } = await supabase.from("bestPlayer").select("*");
+      const { data, error } = await supabase.from("youthFacility").select("*");
 
       if (error) {
         console.error(error);
-        throw new Error("Players could not be loaded");
+        throw new Error("Facilities could not be loaded");
       }
 
       return data;
@@ -39,9 +39,11 @@ export default function Page() {
 
   return (
     <div className="container mx-auto py-10 flex-grow">
-      <p className="mb-3">Players with the highest current attributes.</p>
-      <AddPlayerSection queryKey="bestPlayer">Add player</AddPlayerSection>
-      <DataTable columns={columnsBestPlayers} data={dataArray} />
+      <p className="mb-3">
+        Clubs with the highest youth facilities development attributes.
+      </p>
+      <AddPlayerSection queryKey="youthFacility">Add facility</AddPlayerSection>
+      <DataTable columns={columnsYouthFacilities} data={dataArray} />
     </div>
   );
 }

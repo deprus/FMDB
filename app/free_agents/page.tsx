@@ -5,13 +5,13 @@ import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/utils/supabase";
 import { Skeleton } from "@/components/ui/skeleton";
 import AddPlayerSection from "../../components/AddPlayerSection";
-import { columnsBestPlayers } from "./columnsBestPlayers";
+import { columnsFreeAgents } from "./columnsFreeAgents";
 
 export default function Page() {
   const { data, isLoading: isGetting } = useQuery({
-    queryKey: ["bestPlayer"],
+    queryKey: ["freeAgent"],
     queryFn: async () => {
-      const { data, error } = await supabase.from("bestPlayer").select("*");
+      const { data, error } = await supabase.from("freeAgent").select("*");
 
       if (error) {
         console.error(error);
@@ -40,8 +40,8 @@ export default function Page() {
   return (
     <div className="container mx-auto py-10 flex-grow">
       <p className="mb-3">Players with the highest current attributes.</p>
-      <AddPlayerSection queryKey="bestPlayer">Add player</AddPlayerSection>
-      <DataTable columns={columnsBestPlayers} data={dataArray} />
+      <AddPlayerSection queryKey="freeAgent">Add player</AddPlayerSection>
+      <DataTable columns={columnsFreeAgents} data={dataArray} />
     </div>
   );
 }
