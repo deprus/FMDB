@@ -19,6 +19,7 @@ import { supabase } from "@/utils/supabase";
 import { useToast } from "./ui/use-toast";
 import { ToastAction } from "@radix-ui/react-toast";
 import { queryClient } from "./Providers";
+import { Player } from "@/types";
 
 const FormSchema = z.object({
   name: z.string().min(1, { message: "Name be 1 or more characters long" }),
