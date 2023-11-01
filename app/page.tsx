@@ -1,4 +1,10 @@
-import { PersonStanding } from "lucide-react";
+import {
+  Baby,
+  CircleDollarSign,
+  FileSignature,
+  Medal,
+  PersonStanding,
+} from "lucide-react";
 
 export default function Home() {
   return (
@@ -17,7 +23,7 @@ export default function Home() {
             <div className="w-full max-w-full space-y-4 mx-auto">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div className="flex flex-col items-center space-y-1 border-gray-800 p-4 rounded-lg">
-                  <PersonStanding size={40} />
+                  <Medal size={40} />
                   <h2 className="text-xl font-bold text-black">Best players</h2>
                   <p className="text-blue-950 dark:text-zinc-100">
                     Explore elite talents that can elevate your team&apos;s
@@ -25,7 +31,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col items-center space-y-1 border-gray-800 p-4 rounded-lg">
-                  <PersonStanding size={40} />
+                  <Baby size={40} />
                   <h2 className="text-xl font-bold text-black">Wonderkids</h2>
                   <p className="text-blue-950 dark:text-zinc-100">
                     Unearth football&apos;s rising stars, the young talents with
@@ -34,7 +40,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-col items-center space-y-1 border-gray-800 p-4 rounded-lg">
-                  <PersonStanding size={40} />
+                  <FileSignature size={40} />
                   <h2 className="text-xl font-bold text-black">Free agents</h2>
                   <p className="text-blue-950 dark:text-zinc-100">
                     Sign unattached talents and strengthen your squad with
@@ -42,7 +48,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col items-center space-y-1 border-gray-800 p-4 rounded-lg">
-                  <PersonStanding size={40} />
+                  <CircleDollarSign size={40} />
                   <h2 className="text-xl font-bold text-black">Bargains</h2>
                   <p className="text-blue-950 dark:text-zinc-100">
                     Find hidden gems in the transfer market, offering
