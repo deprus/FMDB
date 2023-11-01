@@ -35,11 +35,6 @@ export default function Nav({
         />
         <NavLink
           setIsHamburgerClosed={setIsHamburgerClosed}
-          href="/coaches"
-          title="Coaches"
-        />
-        <NavLink
-          setIsHamburgerClosed={setIsHamburgerClosed}
           href="/free_agents"
           title="Free agents"
         />
@@ -47,11 +42,6 @@ export default function Nav({
           setIsHamburgerClosed={setIsHamburgerClosed}
           href="/bargains"
           title="Bargains"
-        />
-        <NavLink
-          setIsHamburgerClosed={setIsHamburgerClosed}
-          href="/youth_facilities"
-          title="Youth facilities"
         />
       </ul>
     </div>
