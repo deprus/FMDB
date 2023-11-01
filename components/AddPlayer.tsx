@@ -19,7 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "./ui/use-toast";
 import { queryClient } from "./Providers";
-import { Player } from "../app/wonderkids/columnsWonderkids";
+import { Player } from "@/types";
 
 const FormSchema = z.object({
   name: z

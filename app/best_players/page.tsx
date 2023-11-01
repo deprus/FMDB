@@ -39,7 +39,10 @@ export default function Page() {
 
   return (
     <div className="container mx-auto py-10 flex-grow">
-      <p className="mb-3">Players with the highest current attributes.</p>
+      <p className="mb-3">
+        Players with at least 180 current attributes. Value is 0 because
+        generally they are not for sale.
+      </p>
       <AddPlayerSection queryKey="bestPlayer">Add player</AddPlayerSection>
       <DataTable columns={columnsBestPlayers} data={dataArray} />
     </div>

@@ -39,7 +39,9 @@ export default function Page() {
 
   return (
     <div className="container mx-auto py-10 flex-grow">
-      <p className="mb-3">Players with the highest current attributes.</p>
+      <p className="mb-3">
+        Players out of contract with at least 130 current attributes.
+      </p>
       <AddPlayerSection queryKey="freeAgent">Add player</AddPlayerSection>
       <DataTable columns={columnsFreeAgents} data={dataArray} />
     </div>

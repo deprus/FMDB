@@ -17,19 +17,7 @@ import { useMutation } from "@tanstack/react-query";
 import { ColumnDef } from "@tanstack/react-table";
 import { MoreHorizontal } from "lucide-react";
 import UpdatePlayer from "../../components/UpdatePlayer";
-
-export type Coach = {
-  id?: string;
-  name: string;
-  age: number;
-  pos: string;
-  club: string;
-  wage: number;
-  nat: string;
-  cur: number;
-  pot: string;
-  val: number;
-};
+import { Coach } from "@/types";
 
 export const columnsCoaches: ColumnDef<Coach>[] = [
   {

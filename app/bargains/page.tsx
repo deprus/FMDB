@@ -39,7 +39,7 @@ export default function TournamentsPage() {
   return (
     <div className="container mx-auto py-10 flex-grow">
       <p className="mb-3">
-        Players under 21 with at least 160 potential attributes.
+        Players with the best value for their price (subjective).
       </p>
       <AddPlayerSection queryKey="bargain">Add player</AddPlayerSection>
       <DataTable columns={columnsBargains} data={dataArray} />
