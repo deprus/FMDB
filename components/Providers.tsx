@@ -7,7 +7,7 @@ export const queryClient = new QueryClient();
 
 function Providers({ children }: React.PropsWithChildren) {
   return (
-    <ClerkProvider>
+    <ClerkProvider publishableKey="pk_test_bmVhdC1zY3VscGluLTI1LmNsZXJrLmFjY291bnRzLmRldiQ">
       <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     </ClerkProvider>
   );
