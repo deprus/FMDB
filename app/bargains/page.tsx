@@ -25,10 +25,10 @@ export default function TournamentsPage() {
     return (
       <div className="flex items-center justify-center mt-20 flex-grow">
         <div className="flex items-center space-x-4">
-          <Skeleton className="h-12 w-12 rounded-full" />
+          <Skeleton className="h-12 w-12 rounded-full bg-blue-300" />
           <div className="space-y-2">
-            <Skeleton className="h-4 w-[250px]" />
-            <Skeleton className="h-4 w-[200px]" />
+            <Skeleton className="h-4 w-[250px] bg-blue-300" />
+            <Skeleton className="h-4 w-[200px] bg-blue-300" />
           </div>
         </div>
       </div>
