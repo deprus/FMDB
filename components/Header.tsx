@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Logo from "./Logo";
 import Nav from "./Nav";
-import SignInButton from "./SignInButton";
 import HamburgerButton from "./HamburgerButton";
 
 export default function Header() {
@@ -14,7 +13,6 @@ export default function Header() {
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <Logo setIsHamburgerClosed={setIsHamburgerClosed} />
         <div className="flex lg:order-2">
-          <SignInButton />
           <HamburgerButton
             isHamburgerClosed={isHamburgerClosed}
             setIsHamburgerClosed={setIsHamburgerClosed}
