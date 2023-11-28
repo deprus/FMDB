@@ -16,7 +16,7 @@ export default function Logo({ setIsHamburgerClosed }: LogoProps) {
     >
       <Image
         src="/logo.png"
-        alt="TourneyDB Logo"
+        alt="FMDB Logo"
         className="h-10 mr-3"
         width={40}
         height={40}
