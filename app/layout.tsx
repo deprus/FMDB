@@ -22,6 +22,7 @@ export default function RootLayout({
   return (
     <Providers>
       <html lang="en">
+        <link rel="icon" href="/logo.png" />
         <body className={inter.className}>
           <div className="flex flex-col min-h-screen bg-yellow-50">
             <Header />
