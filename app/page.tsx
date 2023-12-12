@@ -1,10 +1,4 @@
-import {
-  Baby,
-  CircleDollarSign,
-  FileSignature,
-  Medal,
-  PersonStanding,
-} from "lucide-react";
+import { Baby, CircleDollarSign, FileSignature, Medal } from "lucide-react";
 
 export default function Home() {
   return (
